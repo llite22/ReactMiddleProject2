@@ -10,6 +10,7 @@ import { PageLoader } from '../PageLoader/PageLoader';
 
 export const AppLayout = () => {
 	const { theme } = useTheme();
+
 	return (
 		<div className={cn(styles.app, {}, [theme])}>
 			<Suspense fallback={<PageLoader />}>

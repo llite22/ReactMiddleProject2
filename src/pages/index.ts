@@ -1,5 +1,5 @@
 export * from './Home/Home';
 export * from './About/About';
-export * from './NotFoundPage/NotFoundPage';
+export * from './NotFound/NotFound';
 
 

@@ -9,12 +9,14 @@ import { routeTree } from './app/router/routeTree.gen';
 import { ThemeProvider } from './app/providers/ThemeProvider';
 import { PageLoader } from './widgets/PageLoader/PageLoader';
 import { NotFoundPage } from './pages';
+import { PageError } from './widgets/PageError/PageError';
 
 // Create a new router instance
 const router = createRouter({
 	routeTree,
 	defaultPendingComponent: () => <PageLoader />,
-	defaultErrorComponent: () => <NotFoundPage />
+	defaultNotFoundComponent: () => <NotFoundPage />,
+	defaultErrorComponent: () => <PageError />
 });
 
 // Register the router instance for type safety

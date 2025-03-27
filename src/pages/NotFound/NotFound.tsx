@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './NotFoundPage.module.css';
+import styles from './NotFound.module.css';
 import { useTranslation } from 'react-i18next';
 
 interface NotFoundPageProps {
