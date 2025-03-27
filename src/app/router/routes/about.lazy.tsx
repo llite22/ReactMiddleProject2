@@ -4,5 +4,4 @@ import { AboutPage } from '@/pages';
 
 export const Route = createLazyFileRoute(getRouteAbout())({
 	component: AboutPage,
-	pendingComponent: () => <div>Loading...</div>
 });

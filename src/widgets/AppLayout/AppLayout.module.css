@@ -5,11 +5,11 @@
 	color: var(--primary-color);
 }
 
-.content-page {
+.contentPage {
 	display: flex;
 }
 
-.page-wrapper {
+.pageWrapper {
 	flex: 1;
 	padding: 20px;
 }

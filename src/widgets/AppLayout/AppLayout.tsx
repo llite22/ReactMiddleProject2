@@ -6,16 +6,17 @@ import { Sidebar } from '../Sidebar/ui/Sidebar/Sidebar';
 import { Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import { useTheme } from '@/app/providers/ThemeProvider';
+import { PageLoader } from '../PageLoader/PageLoader';
 
 export const AppLayout = () => {
 	const { theme } = useTheme();
 	return (
 		<div className={cn(styles.app, {}, [theme])}>
-			<Suspense fallback={<>loading...</>}>
+			<Suspense fallback={<PageLoader />}>
 				<Navbar />
-				<div className="content-page">
+				<div className={styles.contentPage}>
 					<Sidebar />
-					<div className="page-wrapper">
+					<div className={styles.pageWrapper}>
 						<Outlet />
 					</div>
 					<TanStackRouterDevtools />
