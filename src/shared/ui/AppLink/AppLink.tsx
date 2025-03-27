@@ -2,12 +2,7 @@ import cn from 'classnames';
 import styles from './AppLink.module.css';
 import { Link, LinkProps } from '@tanstack/react-router';
 import { ReactNode } from 'react';
-
-export enum AppLinkTheme {
-	PRIMARY = 'primary',
-	SECONDARY = 'secondary',
-	RED = 'red'
-}
+import { AppLinkTheme } from '@/app/providers/ThemeProvider';
 
 interface AppLinkProps extends LinkProps {
 	className?: string;

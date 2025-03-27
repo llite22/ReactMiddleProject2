@@ -4,11 +4,16 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import pluginRouter from '@tanstack/eslint-plugin-router';
+import stylisticJs from '@stylistic/eslint-plugin-js';
 
 export default tseslint.config(
 	{ ignores: ['dist'] },
 	{
-		extends: [js.configs.recommended, ...tseslint.configs.recommended],
+		extends: [
+			js.configs.recommended,
+			...tseslint.configs.recommended,
+			...pluginRouter.configs['flat/recommended']
+		],
 		files: ['**/*.{ts,tsx}'],
 		languageOptions: {
 			ecmaVersion: 2020,
@@ -16,15 +21,19 @@ export default tseslint.config(
 		},
 		plugins: {
 			'react-hooks': reactHooks,
-			'react-refresh': reactRefresh
+			'react-refresh': reactRefresh,
+			'@stylistic/js': stylisticJs
 		},
 		rules: {
 			...reactHooks.configs.recommended.rules,
-			...pluginRouter.configs['flat/recommended'],
 			'react-refresh/only-export-components': [
 				'warn',
 				{ allowConstantExport: true }
-			]
+			],
+			'@stylistic/js/semi': 'error',
+			'@stylistic/js/quotes': ['error', 'single'],
+			'@stylistic/js/indent': ['error', 'tab', { SwitchCase: 1 }],
+			'@stylistic/js/object-curly-spacing': ['error', 'always']
 		}
 	}
 );

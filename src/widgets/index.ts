@@ -1,3 +1,4 @@
+export * from './AppLayout/AppLayout';
 export * from './Navbar/Navbar';
 export * from './ThemeSwitcher/ThemeSwitcher';
 export * from './LangSwitcher/LangSwitcher';

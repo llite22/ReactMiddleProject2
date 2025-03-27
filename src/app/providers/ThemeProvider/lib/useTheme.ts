@@ -3,7 +3,6 @@ import { Theme, UseThemeResult } from '../model/types/theme';
 import { ThemeContext } from '../model/context/ThemeContext';
 import { LOCAL_STORAGE_THEME_KEY } from '../model/const/theme';
 
-
 export function useTheme(): UseThemeResult {
 	const { theme, setTheme } = useContext(ThemeContext);
 
