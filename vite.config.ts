@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
+import path from 'path';
+import svgr from 'vite-plugin-svgr';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,6 +13,12 @@ export default defineConfig({
 			routesDirectory: './src/app/router/routes',
 			generatedRouteTree: './src/app/router/routeTree.gen.ts'
 		}),
-		react()
-	]
+		react(),
+		svgr()
+	],
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, './src')
+		}
+	}
 });

@@ -1,3 +1,3 @@
-import ThemeProvider from './ui/ThemeProvider';
-export { ThemeProvider };
-export { useTheme } from './model/lib/useTheme';
+export { ThemeProvider } from './ui/ThemeProvider';
+export { useTheme } from './lib/useTheme';
+export { Theme } from './model/types/theme';
