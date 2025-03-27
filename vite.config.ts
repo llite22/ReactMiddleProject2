@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react-swc';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import path from 'path';
 import svgr from 'vite-plugin-svgr';
+import { analyzer } from 'vite-bundle-analyzer';
 
-// https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
 	plugins: [
 		TanStackRouterVite({
 			target: 'react',
@@ -14,7 +14,13 @@ export default defineConfig({
 			generatedRouteTree: './src/app/router/routeTree.gen.ts'
 		}),
 		react(),
-		svgr()
+		svgr(),
+		analyzer({
+			analyzerMode: 'server',
+			analyzerPort: 8888,
+			openAnalyzer: true,
+			summary: true
+		})
 	],
 	resolve: {
 		alias: {
@@ -22,6 +28,13 @@ export default defineConfig({
 		}
 	},
 	define: {
-		__IS_DEV__: JSON.stringify(true)
+		__IS_DEV__: JSON.stringify(mode === 'development')
+	},
+	build: {
+		minify: mode === 'production', // Dev-сборка без минификации
+		sourcemap: mode === 'development', // В dev включаем sourcemaps
+		rollupOptions: {
+			treeshake: mode === 'production' // Выключаем tree-shaking в dev
+		}
 	}
-});
+}));
