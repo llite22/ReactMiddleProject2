@@ -5,14 +5,31 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import pluginRouter from '@tanstack/eslint-plugin-router';
 import stylisticJs from '@stylistic/eslint-plugin-js';
+import css from '@eslint/css';
+import i18next from 'eslint-plugin-i18next';
 
 export default tseslint.config(
 	{ ignores: ['dist'] },
 	{
+		files: ['**/*.css'],
+		plugins: {
+			css
+		},
+		languageOptions: {
+			tolerant: true
+		},
+		language: 'css/css',
+		rules: {
+			'css/no-duplicate-imports': 'error',
+			'css/no-empty-blocks': 'error'
+		}
+	},
+	{
 		extends: [
 			js.configs.recommended,
 			...tseslint.configs.recommended,
-			...pluginRouter.configs['flat/recommended']
+			...pluginRouter.configs['flat/recommended'],
+			i18next.configs['flat/recommended']
 		],
 		files: ['**/*.{ts,tsx}'],
 		languageOptions: {
@@ -22,7 +39,7 @@ export default tseslint.config(
 		plugins: {
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh,
-			'@stylistic/js': stylisticJs
+			'@stylistic/js': stylisticJs,
 		},
 		rules: {
 			...reactHooks.configs.recommended.rules,
@@ -33,7 +50,7 @@ export default tseslint.config(
 			'@stylistic/js/semi': 'error',
 			'@stylistic/js/quotes': ['error', 'single'],
 			'@stylistic/js/indent': ['error', 'tab', { SwitchCase: 1 }],
-			'@stylistic/js/object-curly-spacing': ['error', 'always']
+			'@stylistic/js/object-curly-spacing': ['error', 'always'],
 		}
 	}
 );
