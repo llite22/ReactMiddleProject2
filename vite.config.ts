@@ -20,5 +20,8 @@ export default defineConfig({
 		alias: {
 			'@': path.resolve(__dirname, './src')
 		}
+	},
+	define: {
+		__IS_DEV__: JSON.stringify(true)
 	}
 });
