@@ -5,4 +5,6 @@ declare module '*.svg?react' {
 	export default ReactComponent;
 }
 
+declare module '*.module.css';
+
 declare const __IS_DEV__: boolean;

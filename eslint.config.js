@@ -39,7 +39,7 @@ export default tseslint.config(
 		plugins: {
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh,
-			'@stylistic/js': stylisticJs,
+			'@stylistic/js': stylisticJs
 		},
 		rules: {
 			...reactHooks.configs.recommended.rules,
@@ -50,7 +50,13 @@ export default tseslint.config(
 			'@stylistic/js/semi': 'error',
 			'@stylistic/js/quotes': ['error', 'single'],
 			'@stylistic/js/indent': ['error', 'tab', { SwitchCase: 1 }],
-			'@stylistic/js/object-curly-spacing': ['error', 'always'],
+			'@stylistic/js/object-curly-spacing': ['error', 'always']
+		}
+	},
+	{
+		files: ['**/src/**/*.test.{ts,tsx}'],
+		rules: {
+			'i18next/no-literal-string': 'off'
 		}
 	}
 );

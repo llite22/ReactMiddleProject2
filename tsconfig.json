@@ -5,9 +5,12 @@
 		{ "path": "./tsconfig.node.json" }
 	],
 	"compilerOptions": {
+		"esModuleInterop": true,
+		"jsx": "react-jsx",
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
 		}
-	}
+	},
+	"include": ["src/vite-env.d.ts", "jest/jest-setup.ts"]
 }
