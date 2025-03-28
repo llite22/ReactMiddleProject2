@@ -1,5 +1,4 @@
 import cn from 'classnames';
-import styles from './AppLayout.module.css';
 import { Suspense } from 'react';
 import { Navbar } from '../Navbar/Navbar';
 import { Sidebar } from '../Sidebar/ui/Sidebar/Sidebar';
@@ -12,12 +11,12 @@ export const AppLayout = () => {
 	const { theme } = useTheme();
 
 	return (
-		<div className={cn(styles.app, {}, [theme])}>
+		<div className={cn('app', {}, [theme])}>
 			<Suspense fallback={<PageLoader />}>
 				<Navbar />
-				<div className={styles.contentPage}>
+				<div className={'contentPage'}>
 					<Sidebar />
-					<div className={styles.pageWrapper}>
+					<div className={'pageWrapper'}>
 						<Outlet />
 					</div>
 					<TanStackRouterDevtools />

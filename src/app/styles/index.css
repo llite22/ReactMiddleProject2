@@ -7,3 +7,18 @@
 body {
 	font: var(--font-m);
 }
+
+.app {
+	background: var(--bg-color);
+	min-height: 100vh;
+	color: var(--primary-color);
+}
+
+.contentPage {
+	display: flex;
+}
+
+.pageWrapper {
+	flex: 1;
+	padding: 20px;
+}

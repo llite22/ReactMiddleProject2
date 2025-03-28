@@ -7,7 +7,7 @@ import { AppLinkTheme } from '@/app/providers/ThemeProvider';
 interface AppLinkProps extends LinkProps {
 	className?: string;
 	children: ReactNode;
-	theme: AppLinkTheme.PRIMARY;
+	theme: AppLinkTheme;
 }
 
 export const AppLink = ({
