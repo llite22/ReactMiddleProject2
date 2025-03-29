@@ -39,7 +39,7 @@ const config: Config = {
 	],
 	setupFilesAfterEnv: ['<rootDir>/jest/jest-setup.ts'],
 	transform: {
-		'^.+\\.tsx?$': 'ts-jest'
+		'^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.jest.json' }] // warn
 	},
 	moduleNameMapper: {
 		'\\.(css)$': 'identity-obj-proxy',

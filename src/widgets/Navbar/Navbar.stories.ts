@@ -7,9 +7,6 @@ const meta = {
 	title: 'widget/Navbar',
 	component: Navbar,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: { control: 'color' }
-	}
 } satisfies Meta<typeof Navbar>;
 
 export default meta;

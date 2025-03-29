@@ -1,0 +1,5 @@
+{
+	"extends": "./tsconfig.json",
+	"include": ["src", "jest/jest-setup.ts", "src/vite-env.d.ts"]
+  }
+  

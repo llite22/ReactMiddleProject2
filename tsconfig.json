@@ -2,15 +2,14 @@
 	"files": [],
 	"references": [
 		{ "path": "./tsconfig.app.json" },
-		{ "path": "./tsconfig.node.json" }
+		{ "path": "./tsconfig.node.json" },
 	],
 	"compilerOptions": {
-		"esModuleInterop": true,
-		"jsx": "react-jsx",
+		"esModuleInterop": true, // jest
+		"jsx": "react-jsx", // jest
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
 		}
-	},
-	"include": ["src/vite-env.d.ts", "jest/jest-setup.ts"]
+	}
 }

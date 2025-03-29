@@ -7,9 +7,6 @@ const meta = {
 	title: 'widget/Sidebar',
 	component: Sidebar,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: { control: 'color' }
-	}
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
