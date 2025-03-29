@@ -15,12 +15,16 @@ export default defineConfig(({ mode }) => ({
 		}),
 		react(),
 		svgr(),
-		analyzer({
-			analyzerMode: 'server',
-			analyzerPort: 8888,
-			openAnalyzer: true,
-			summary: true
-		})
+		...(mode === 'production'
+			? []
+			: [
+				analyzer({
+					analyzerMode: 'server',
+					analyzerPort: 8888,
+					openAnalyzer: true,
+					summary: true
+				})
+			])
 	],
 	resolve: {
 		alias: {
