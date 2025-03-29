@@ -50,7 +50,9 @@ export default tseslint.config(
 			'@stylistic/js/semi': 'error',
 			'@stylistic/js/quotes': ['error', 'single'],
 			'@stylistic/js/indent': ['error', 'tab', { SwitchCase: 1 }],
-			'@stylistic/js/object-curly-spacing': ['error', 'always']
+			'@stylistic/js/object-curly-spacing': ['error', 'always'],
+			'react-refresh/only-export-components': 'off',
+			'@typescript-eslint/ban-ts-comment': 'off'
 		}
 	},
 	{
