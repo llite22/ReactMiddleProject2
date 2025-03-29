@@ -7,6 +7,7 @@ import pluginRouter from '@tanstack/eslint-plugin-router';
 import stylisticJs from '@stylistic/eslint-plugin-js';
 import css from '@eslint/css';
 import i18next from 'eslint-plugin-i18next';
+import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default tseslint.config(
 	{ ignores: ['dist'] },
@@ -29,7 +30,8 @@ export default tseslint.config(
 			js.configs.recommended,
 			...tseslint.configs.recommended,
 			...pluginRouter.configs['flat/recommended'],
-			i18next.configs['flat/recommended']
+			i18next.configs['flat/recommended'],
+			...pluginQuery.configs['flat/recommended']
 		],
 		files: ['**/*.{ts,tsx}'],
 		languageOptions: {
