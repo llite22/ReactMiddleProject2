@@ -1,8 +1,6 @@
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/shared/ui';
-import { ThemeButton } from '@/app/providers/ThemeProvider';
-
+import { Button, ThemeButton } from '@/shared/ui';
 interface LangSwitcherProps {
 	className?: string;
 	short?: boolean;

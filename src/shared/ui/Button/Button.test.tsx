@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button } from './Button';
-import { ThemeButton } from '@/app/providers/ThemeProvider';
+import { Button, ThemeButton } from './Button';
 
 describe('Button component', () => {
 	test('renders with children', () => {

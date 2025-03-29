@@ -1,7 +1,6 @@
 import cn from 'classnames';
 import styles from './Button.module.css';
 import { ButtonHTMLAttributes, ReactNode } from 'react';
-import { ThemeButton } from '@/app/providers/ThemeProvider';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
@@ -11,6 +10,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	size?: ButtonSize;
 	disabled?: boolean;
 	fullWidth?: boolean;
+}
+
+export enum ThemeButton {
+	CLEAR = 'clear',
+	CLEAR_INVERTED = 'clearInverted',
+	OUTLINE = 'outline',
+	OUTLINE_RED = 'outline_red',
+	BACKGROUND = 'background',
+	BACKGROUND_INVERTED = 'backgroundInverted'
 }
 
 export const enum ButtonSize {

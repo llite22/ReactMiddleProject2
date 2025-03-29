@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { Button, ButtonSize } from './Button';
-import { Theme, ThemeButton } from '@/app/providers/ThemeProvider';
+import { Button, ButtonSize, ThemeButton } from './Button';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 const meta = {
